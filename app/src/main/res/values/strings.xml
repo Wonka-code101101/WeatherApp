@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Retorfit app</string>
+    <string name="get_current_weather">get current weather</string>
+</resources>
