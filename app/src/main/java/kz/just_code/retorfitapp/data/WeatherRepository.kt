@@ -5,12 +5,15 @@ import kz.just_code.retorfitapp.api.WeatherApi
 import kz.just_code.retorfitapp.api.WeatherApiError
 import kz.just_code.retorfitapp.api.WeatherResponse
 import okhttp3.ResponseBody
+import javax.inject.Inject
+import javax.inject.Singleton
+
 
 interface WeatherRepository {
     suspend fun getCurrentWeather(city: String): WeatherResponse?
 }
-
-class WeatherRepositoryImpl(
+@Singleton
+class WeatherRepositoryImpl @Inject constructor(
     private val api: WeatherApi
 ): WeatherRepository {
     override suspend fun getCurrentWeather(city: String): WeatherResponse? {

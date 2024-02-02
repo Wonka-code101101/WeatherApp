@@ -13,8 +13,10 @@ import kz.just_code.retorfitapp.api.WeatherApiData
 import kz.just_code.retorfitapp.api.WeatherResponse
 import kz.just_code.retorfitapp.data.WeatherRepository
 import kz.just_code.retorfitapp.data.WeatherRepositoryImpl
+import javax.inject.Inject
+
 @HiltViewModel
-class MainViewModel: BaseViewModel() {
+class MainViewModel @Inject constructor(): BaseViewModel() {
     private val repository: WeatherRepository = WeatherRepositoryImpl(WeatherApiData.getApi())
 
     private var _currentWeatherLiveData = MutableLiveData<WeatherResponse?>()
