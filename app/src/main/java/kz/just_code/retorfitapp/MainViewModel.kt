@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -12,7 +13,7 @@ import kz.just_code.retorfitapp.api.WeatherApiData
 import kz.just_code.retorfitapp.api.WeatherResponse
 import kz.just_code.retorfitapp.data.WeatherRepository
 import kz.just_code.retorfitapp.data.WeatherRepositoryImpl
-
+@HiltViewModel
 class MainViewModel: BaseViewModel() {
     private val repository: WeatherRepository = WeatherRepositoryImpl(WeatherApiData.getApi())
 

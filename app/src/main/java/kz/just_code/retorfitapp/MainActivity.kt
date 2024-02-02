@@ -9,9 +9,11 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
+import dagger.hilt.android.AndroidEntryPoint
 import kz.just_code.retorfitapp.databinding.ActivityMainBinding
 import java.text.SimpleDateFormat
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     private val viewModel = MainViewModel()
