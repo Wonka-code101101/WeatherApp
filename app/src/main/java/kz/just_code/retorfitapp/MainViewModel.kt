@@ -9,15 +9,18 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import kz.just_code.retorfitapp.api.WeatherApiData
 import kz.just_code.retorfitapp.api.WeatherResponse
-import kz.just_code.retorfitapp.data.WeatherRepository
-import kz.just_code.retorfitapp.data.WeatherRepositoryImpl
+import kz.just_code.retorfitapp.repository.WeatherRepository
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(): BaseViewModel() {
-    private val repository: WeatherRepository = WeatherRepositoryImpl(WeatherApiData.getApi())
+class MainViewModel @Inject constructor(
+    private val repository: WeatherRepository
+): BaseViewModel(
+
+) {
+
+
 
     private var _currentWeatherLiveData = MutableLiveData<WeatherResponse?>()
     val currentWeatherLiveData: LiveData<WeatherResponse?> = _currentWeatherLiveData

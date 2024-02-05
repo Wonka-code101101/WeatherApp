@@ -1,4 +1,4 @@
-package kz.just_code.retorfitapp.data
+package kz.just_code.retorfitapp.repository
 
 import com.google.gson.Gson
 import kz.just_code.retorfitapp.api.WeatherApi
@@ -6,13 +6,12 @@ import kz.just_code.retorfitapp.api.WeatherApiError
 import kz.just_code.retorfitapp.api.WeatherResponse
 import okhttp3.ResponseBody
 import javax.inject.Inject
-import javax.inject.Singleton
 
 
 interface WeatherRepository {
     suspend fun getCurrentWeather(city: String): WeatherResponse?
 }
-@Singleton
+
 class WeatherRepositoryImpl @Inject constructor(
     private val api: WeatherApi
 ): WeatherRepository {

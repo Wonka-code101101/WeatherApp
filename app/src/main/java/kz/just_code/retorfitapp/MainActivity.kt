@@ -15,8 +15,9 @@ import java.text.SimpleDateFormat
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+    private val viewModel: MainViewModel by viewModels()
     private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
-    private val viewModel = MainViewModel()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
