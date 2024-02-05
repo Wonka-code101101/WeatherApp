@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
 import kz.just_code.retorfitapp.databinding.ActivityMainBinding
 import java.text.SimpleDateFormat
+import androidx.activity.viewModels
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
