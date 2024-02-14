@@ -15,7 +15,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    private fun getRetrofit(): Retrofit {
+    fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
             .baseUrl("https://api.weatherapi.com/v1/")
             .addConverterFactory(GsonConverterFactory.create())
